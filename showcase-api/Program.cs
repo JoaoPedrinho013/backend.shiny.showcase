@@ -11,6 +11,7 @@ builder.Services.AddOpenApiDocument();
 builder.Services.AddOpenApi();
 
 builder.Services.AddScoped<IPokemonRepository, PokemonRepository>();
+builder.Services.AddScoped<IPlayerRepositoy, PlayerRepository>();
 
 
 var app = builder.Build();

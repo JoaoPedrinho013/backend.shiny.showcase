@@ -8,7 +8,7 @@ public class PokemonRepository : IPokemonRepository
 {
     public void Create(PokemonCreateRequestDto request)
     {
-        //validar
+        //validar se existe nome, gif e reigoes, tbm validar se ja nao tem criado no banco de dados
         //condicoes ifs da vida no request e no banco para nao gerar duplicidades
         //preparar
         var pokemon = new Pokemon

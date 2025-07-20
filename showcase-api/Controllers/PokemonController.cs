@@ -8,7 +8,7 @@ namespace showcase_api.Controllers;
 [Route("[controller]")]
 public class PokemonController(IPokemonRepository pokemonRepository) : ControllerBase
 {
-    [HttpPost(Name = "Create")]
+    [HttpPost(Name = "CreatePokemon")]
     public void Create([FromBody] PokemonCreateRequestDto request)
     {
         pokemonRepository.Create(request);
