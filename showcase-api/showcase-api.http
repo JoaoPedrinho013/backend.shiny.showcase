@@ -1,0 +1,6 @@
+@showcase_api_HostAddress = http://localhost:5063
+
+GET {{showcase_api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
