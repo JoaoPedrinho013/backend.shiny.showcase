@@ -2,11 +2,11 @@ namespace Domain.Enums;
 
 public enum CatchMethod
 {
-    Fishing,
     Single,
+    Fishing,
     Hordex3,
     Hordex5,
     Safari,
-    Mysterious, 
+    Mysterious,
     Egg
 }

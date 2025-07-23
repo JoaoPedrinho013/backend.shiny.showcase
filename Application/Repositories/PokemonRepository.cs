@@ -6,6 +6,10 @@ namespace Application.Repositories;
 
 public class PokemonRepository : IPokemonRepository
 {
+    /// <summary>
+    /// Esse método é responsável por criar um Player
+    /// </summary>
+    /// <param name="request">Esse parâmetro são os dados necessário para criar um player</param>
     public void Create(PokemonCreateRequestDto request)
     {
         //validar se existe nome, gif e reigoes, tbm validar se ja nao tem criado no banco de dados
