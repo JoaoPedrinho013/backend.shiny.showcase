@@ -19,7 +19,7 @@ public class PokemonRepository : IPokemonRepository
         {
             Name = request.Name,
             GifName = request.GifName,
-            Regions = request.Regions
+            // Regions = request.Regions
 
         };
         //persistir

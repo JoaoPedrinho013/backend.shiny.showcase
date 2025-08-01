@@ -18,4 +18,13 @@ public class PlayerRepository : IPlayerRepository
 
         //persistir no banco de dados
     }
+    // public void Update(PlayerCreateRequestDto request)
+    // {
+    //     //validar se existe nome e verificar se ja nao esta criado no banco de dados
+
+    //     //preparar
+    //     //receber um id e trocar o name dele pelo name
+
+    //     //persistir no banco de dados
+    // }
 }

@@ -1,6 +1,6 @@
 namespace Domain.Enums;
 
-public enum PokemonRegion
+public enum Region
 {
     Kanto,
     Johto,
