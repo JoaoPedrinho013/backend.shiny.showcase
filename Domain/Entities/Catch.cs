@@ -3,7 +3,7 @@ using Domain.Enums;
 
 namespace Domain.Entities;
 
-public class Catches : BaseEntity
+public class Catch : BaseEntity
 {
     public int PlayerId { get; set; }
     public virtual Player Player { get; set; } = default!;
