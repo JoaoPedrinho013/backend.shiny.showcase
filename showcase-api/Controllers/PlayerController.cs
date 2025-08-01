@@ -6,7 +6,7 @@ namespace showcase_api.Controllers;
 
 [ApiController]
 [Route("[Controller]")]
-public class PlayerController(IPlayerRepositoy playerRepositoy) : ControllerBase
+public class PlayerController(IPlayerRepository playerRepositoy) : ControllerBase
 {
     [HttpPost(Name = "CreatePlayer")]
     public void Create([FromBody] PlayerCreateRequestDto request)

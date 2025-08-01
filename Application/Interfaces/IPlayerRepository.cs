@@ -2,7 +2,7 @@ using Application.Dtos;
 
 namespace Application.Interfaces;
 
-public interface IPlayerRepositoy
+public interface IPlayerRepository
 {
     void Create(PlayerCreateRequestDto request);
 }

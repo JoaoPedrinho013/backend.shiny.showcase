@@ -1,5 +1,7 @@
 using Application.Interfaces;
 using Application.Repositories;
+using Microsoft.EntityFrameworkCore;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,11 +13,21 @@ builder.Services.AddOpenApiDocument();
 builder.Services.AddOpenApi();
 
 builder.Services.AddScoped<IPokemonRepository, PokemonRepository>();
-builder.Services.AddScoped<IPlayerRepositoy, PlayerRepository>();
+builder.Services.AddScoped<IPlayerRepository, PlayerRepository>();
 
+builder.Services.AddDbContext<AppDbContext>(opt => 
+    opt.UseNpgsql(builder.Configuration.GetConnectionString("MinhaConexao")));
+
+builder.Services.AddScoped<AppDbContextInitialiser>();
 
 var app = builder.Build();
 
+// Initialise and seed database
+using (var scope = app.Services.CreateScope())
+{
+    var initialiser = scope.ServiceProvider.GetRequiredService<AppDbContextInitialiser>();
+    await initialiser.InitialiseAsync();
+}
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

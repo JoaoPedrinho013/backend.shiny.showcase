@@ -4,7 +4,7 @@ using Domain.Entities;
 
 namespace Application.Repositories;
 
-public class PlayerRepository : IPlayerRepositoy
+public class PlayerRepository : IPlayerRepository
 {
     public void Create(PlayerCreateRequestDto request)
     {
