@@ -6,5 +6,5 @@ public class Player : BaseEntity
 {
     public required string Name { get; set; }
 
-    public virtual List<PlayerPokemon> Catches { get; set; } = [];
+    public virtual List<Catches> Catches { get; set; } = [];
 }
