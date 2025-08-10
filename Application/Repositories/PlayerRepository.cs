@@ -1,12 +1,13 @@
+using System.Threading.Tasks;
 using Application.Dtos;
 using Application.Interfaces;
 using Domain.Entities;
 
 namespace Application.Repositories;
 
-public class PlayerRepository : IPlayerRepository
+public class PlayerRepository(IAppDbContext dbContext) : IPlayerRepository
 {
-    public void Create(PlayerCreateRequestDto request)
+    public async Task Create(PlayerCreateRequestDto request)
     {
         //validar se existe nome e verificar se ja nao esta criado no banco de dados
 
@@ -16,8 +17,12 @@ public class PlayerRepository : IPlayerRepository
             Name = request.Name
         };
 
+        dbContext.Players.Add(player);
+        await dbContext.SaveChangesAsync();
+
         //persistir no banco de dados
     }
+}
     // public void Update(PlayerCreateRequestDto request)
     // {
     //     //validar se existe nome e verificar se ja nao esta criado no banco de dados
@@ -27,4 +32,3 @@ public class PlayerRepository : IPlayerRepository
 
     //     //persistir no banco de dados
     // }
-}

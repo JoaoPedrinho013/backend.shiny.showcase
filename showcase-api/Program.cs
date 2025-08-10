@@ -20,6 +20,8 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
 
 builder.Services.AddScoped<AppDbContextInitialiser>();
 
+builder.Services.AddScoped<IAppDbContext>(provider => provider.GetRequiredService<AppDbContext>());
+
 var app = builder.Build();
 
 // Initialise and seed database

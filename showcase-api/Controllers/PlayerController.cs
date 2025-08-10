@@ -9,12 +9,12 @@ namespace showcase_api.Controllers;
 public class PlayerController(IPlayerRepository playerRepository) : ControllerBase
 {
     [HttpPost(Name = "CreatePlayer")]
-    public void Create([FromBody] PlayerCreateRequestDto request)
+    public async Task Create([FromBody] PlayerCreateRequestDto request)
     {
-        playerRepository.Create(request);
+        await playerRepository.Create(request);
     }
 
-    // [HttpPost(Name = "UpdatePlayer")]
+    // [HttpUpdate(Name = "UpdatePlayer")]
     // public void Update([FromBody] PlayerCreateRequestDto request)
     // {
     //     playerRepository.Update(request);

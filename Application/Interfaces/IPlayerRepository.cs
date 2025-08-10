@@ -4,6 +4,6 @@ namespace Application.Interfaces;
 
 public interface IPlayerRepository
 {
-    void Create(PlayerCreateRequestDto request);
+    Task Create(PlayerCreateRequestDto request);
     // void Update(PlayerCreateRequestDto request);
 }
