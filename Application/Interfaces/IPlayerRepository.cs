@@ -5,5 +5,5 @@ namespace Application.Interfaces;
 public interface IPlayerRepository
 {
     Task Create(PlayerCreateRequestDto request);
-    // void Update(PlayerCreateRequestDto request);
+    Task<bool> Update(int id, PlayerCreateRequestDto request);
 }
